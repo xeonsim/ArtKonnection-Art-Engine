@@ -16,15 +16,20 @@ let data = JSON.parse(rawdata);
 let requests = data.map((item) => {
   return new Promise((resolve, reject) => {
     const _file = `${inputDir}/${item.edition + 1000000 * projectId}.png`;
-    caver.ipfs.add(_file).then((cid) => {
-      console.log(`uploaded: ${cid}`);
-      item.image = `ipfs://${cid}`;
-      fs.writeFileSync(
-        `${basePath}/build/json/${item.edition + 1000000 * projectId}.json`,
-        JSON.stringify(item, null, 2)
-      );
-      resolve();
-    });
+    caver.ipfs
+      .add(_file)
+      .then((cid) => {
+        console.log(`uploaded: ${cid}`);
+        item.image = `ipfs://${cid}`;
+        fs.writeFileSync(
+          `${basePath}/build/json/${item.edition + 1000000 * projectId}.json`,
+          JSON.stringify(item, null, 2)
+        );
+        resolve();
+      })
+      .catch((err) => {
+        reject(err);
+      });
   });
 });
 
