@@ -8,14 +8,11 @@ const { projectId } = require(`${basePath}/src/config.js`);
 const caver = new Caver(rpcURL);
 
 // Set connection with IPFS Node
+// ipfs.infura.io  or  infura-ipfs.io
 caver.ipfs.setIPFSNode("infura-ipfs.io", 5001, true);
 
 let rawdata = fs.readFileSync(`${basePath}/build/json/_metadata.json`);
 let data = JSON.parse(rawdata);
-
-function delay(time) {
-  return new Promise((resolve) => setTimeout(resolve, time));
-}
 
 let requests = data.map((item) => {
   return new Promise((resolve, reject) => {

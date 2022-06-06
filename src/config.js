@@ -1,12 +1,12 @@
 // General metadata
-const namePrefix = " Collection";
+const namePrefix = "TestCollection";
 const description = "Remember to replace this description";
+const projectId = 3;
+const _edtionSize = 30;
+
 const useBaseIpfs = false;
 const ipfsCID = "ferfagtntaferedwafrb";
 const baseIpfsUrl = `ipfs://${ipfsCID}`;
-const projectId = 3;
-
-const _edtionSize = 30;
 
 const layerConfigurations = [
   {
@@ -34,9 +34,9 @@ const pixelFormat = {
 };
 
 const extraMetadata = {
-  external_url: "",
-  youtube_url: "",
-  creator: "",
+  external_url: "https://example.com",
+  youtube_url: "https://youtube.com",
+  creator: "ArtKonnection",
 };
 
 const rarityDelimiter = "#";

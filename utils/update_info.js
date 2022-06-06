@@ -6,6 +6,7 @@ const {
   namePrefix,
   projectId,
   useBaseIpfs,
+  extraMetadata,
 } = require(`${basePath}/src/config.js`);
 
 // read json data
@@ -18,6 +19,9 @@ data.forEach((item) => {
   useBaseIpfs
     ? (item.image = `${baseIpfsUrl}/${item.edition + 1000000 * projectId}.png`)
     : null;
+  for (let key of Object.keys(extraMetadata)) {
+    item[key] = extraMetadata[key];
+  }
   fs.writeFileSync(
     `${basePath}/build/json/${item.edition + 1000000 * projectId}.json`,
     JSON.stringify(item, null, 2)
