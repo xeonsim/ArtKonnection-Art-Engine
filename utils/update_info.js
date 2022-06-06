@@ -6,6 +6,7 @@ const {
   namePrefix,
   projectId,
   useBaseIpfs,
+  baseIpfsUrl,
   extraMetadata,
 } = require(`${basePath}/src/config.js`);
 
