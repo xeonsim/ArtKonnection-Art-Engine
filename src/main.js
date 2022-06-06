@@ -6,7 +6,8 @@ const buildDir = `${basePath}/build`;
 const layersDir = `${basePath}/layers`;
 const {
   format,
-  
+  useBaseIpfs,
+  baseIpfsUrl,
   description,
   uniqueDnaTorrance,
   layerConfigurations,
@@ -100,7 +101,7 @@ const layersSetup = (layersOrder) => {
 
 const saveImage = (_editionCount) => {
   fs.writeFileSync(
-    `${buildDir}/images/${_editionCount+projectId*1000000}.png`,
+    `${buildDir}/images/${_editionCount + projectId * 1000000}.png`,
     canvas.toBuffer("image/png")
   );
 };
@@ -110,7 +111,7 @@ const addMetadata = (_dna, _edition) => {
   let tempMetadata = {
     name: `${namePrefix} #${_edition}`,
     description: description,
-    image: ``,
+    image: useBaseIpfs ? baseIpfsUrl : "",
     edition: _edition,
     date: dateTime,
     ...extraMetadata,
@@ -243,7 +244,7 @@ const saveMetaDataSingleFile = (_editionCount) => {
       )
     : null;
   fs.writeFileSync(
-    `${buildDir}/json/${_editionCount+projectId*1000000}.json`,
+    `${buildDir}/json/${_editionCount + projectId * 1000000}.json`,
     JSON.stringify(metadata, null, 2)
   );
 };

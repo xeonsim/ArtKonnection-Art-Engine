@@ -5,6 +5,7 @@ const {
   description,
   namePrefix,
   projectId,
+  useBaseIpfs,
 } = require(`${basePath}/src/config.js`);
 
 // read json data
@@ -14,7 +15,9 @@ let data = JSON.parse(rawdata);
 data.forEach((item) => {
   item.name = `${namePrefix} #${item.edition}`;
   item.description = description;
-
+  useBaseIpfs
+    ? (item.image = `${baseIpfsUrl}/${item.edition + 1000000 * projectId}.png`)
+    : null;
   fs.writeFileSync(
     `${basePath}/build/json/${item.edition + 1000000 * projectId}.json`,
     JSON.stringify(item, null, 2)

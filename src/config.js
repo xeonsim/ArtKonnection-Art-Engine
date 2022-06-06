@@ -1,9 +1,12 @@
 // General metadata
 const namePrefix = " Collection";
 const description = "Remember to replace this description";
+const useBaseIpfs = false;
+const ipfsCID = "ferfagtntaferedwafrb";
+const baseIpfsUrl = `ipfs://${ipfsCID}`;
 const projectId = 3;
 
-const _edtionSize = 3;
+const _edtionSize = 30;
 
 const layerConfigurations = [
   {
@@ -51,13 +54,13 @@ const debugLogs = false;
 
 module.exports = {
   format,
-
+  useBaseIpfs,
   description,
   uniqueDnaTorrance,
   layerConfigurations,
   rarityDelimiter,
   preview,
-
+  baseIpfsUrl,
   debugLogs,
   extraMetadata,
   pixelFormat,
