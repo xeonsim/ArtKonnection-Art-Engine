@@ -29,7 +29,6 @@ let requests = data.map((item) => {
 });
 
 Promise.all(requests).then(() => {
-  //   console.log(`cid: ${res}`);
   console.log(data);
   fs.writeFileSync(
     `${basePath}/build/json/_metadata.json`,
