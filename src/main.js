@@ -6,7 +6,7 @@ const buildDir = `${basePath}/build`;
 const layersDir = `${basePath}/layers`;
 const {
   format,
-  baseUri,
+  
   description,
   uniqueDnaTorrance,
   layerConfigurations,
@@ -110,7 +110,7 @@ const addMetadata = (_dna, _edition) => {
   let tempMetadata = {
     name: `${namePrefix} #${_edition}`,
     description: description,
-    image: `${baseUri}/${_edition+projectId*1000000}.png`,
+    image: ``,
     edition: _edition,
     date: dateTime,
     ...extraMetadata,

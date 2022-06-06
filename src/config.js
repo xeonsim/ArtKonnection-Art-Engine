@@ -1,10 +1,9 @@
 // General metadata
-const namePrefix = "Your Collection";
+const namePrefix = " Collection";
 const description = "Remember to replace this description";
-const baseUri = "ipfs://aewuogngbenawtgerafdwfrbt";
 const projectId = 3;
 
-const _edtionSize = 10;
+const _edtionSize = 3;
 
 const layerConfigurations = [
   {
@@ -52,7 +51,7 @@ const debugLogs = false;
 
 module.exports = {
   format,
-  baseUri,
+
   description,
   uniqueDnaTorrance,
   layerConfigurations,
