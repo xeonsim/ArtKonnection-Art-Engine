@@ -53,13 +53,16 @@ const format = {
   smoothing: false,
 };
 
+//픽셀 이미지 생성시 필요한 값입니다. 
+const _ratio = 10
+// 위 값이 작을 수록 더 많이 픽셀화 됩니다.
 const pixelFormat = {
-  ratio: 10 / 128,
+  ratio: _ratio / 128,
 };
 
 // 추가 메타데이터를 설정합니다. 
 const extraMetadata = {
-//설정하지 않을 시 아래 내용을 지워주세
+//설정하지 않을 시 아래 내용을 지워주세요
   external_url: "https://example.com",
   youtube_url: "https://youtube.com",
   creator: "ArtKonnection",
