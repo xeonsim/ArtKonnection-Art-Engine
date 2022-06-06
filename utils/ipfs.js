@@ -33,10 +33,14 @@ let requests = data.map((item) => {
   });
 });
 
-Promise.all(requests).then(() => {
-  console.log(data);
-  fs.writeFileSync(
-    `${basePath}/build/json/_metadata.json`,
-    JSON.stringify(data, null, 2)
-  );
-});
+Promise.all(requests)
+  .then(() => {
+    console.log(data);
+    fs.writeFileSync(
+      `${basePath}/build/json/_metadata.json`,
+      JSON.stringify(data, null, 2)
+    );
+  })
+  .catch((err) => {
+    console.log(err);
+  });
