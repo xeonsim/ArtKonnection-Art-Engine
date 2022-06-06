@@ -116,6 +116,7 @@ const addMetadata = (_dna, _edition) => {
     date: dateTime,
     ...extraMetadata,
     attributes: attributesList,
+    compiler: "ArtKonnection",
   };
   metadataList.push(tempMetadata);
   attributesList = [];
